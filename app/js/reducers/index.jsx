@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-import header from 'reducers/header'
+import articlesPage from 'reducers/articlesPage'
 export default combineReducers({
-    header
+    articlesPage
 })

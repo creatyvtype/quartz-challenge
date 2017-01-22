@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Header from 'smart_components/header'
+import Header from 'components/header'
 
 import 'styles/main'
 

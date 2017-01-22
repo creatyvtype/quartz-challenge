@@ -50,8 +50,14 @@ const articles = require('./articles.json');
 const apiPort = process.env.API_PORT || 3000;
 const api = express()
 const router = express.Router();
-router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });   
+
+
+router.use(function(req, res, next) {
+    // do logging
+
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+
+    next(); // make sure we go to the next routes and don't stop here
 });
 
 router.route('/articles')
