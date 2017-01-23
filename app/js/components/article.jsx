@@ -20,16 +20,16 @@ class Article extends Component {
 	}
 
 	layoutArticle() {
-		const { article } = this.props
+		const { article, colorStyleReverse } = this.props
+		const colorStyle = colorStyleReverse ? "reverse" : "normal"
+
 		if (article) {
 
 			return (
-				<div className="article">
+				<div className={"article " + colorStyle}>
 					<div className="title" dangerouslySetInnerHTML={this.titleHtml(article)}>
 					</div>
-					<div className="graphic">
-						<img href={article.hero.url} />
-					</div>
+					<img className="graphic" href={article.hero.url} />
 					<div className="content" dangerouslySetInnerHTML={this.contentHtml(article)}>
 					</div>
 				</div>

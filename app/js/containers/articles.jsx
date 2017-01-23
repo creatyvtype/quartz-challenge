@@ -28,10 +28,11 @@ class ArticlesPage extends Component {
 		return (
 			<div className="articles-page">
 				{
-					indexes.map(index => (
+					indexes.map((index, idx) => (
 						<div className="flex-height" key={index}>
 							<Article onVisible={this.props.getArticle.bind(null, index)} 
 								article={this.props.page.articles[index]}
+								colorStyleReverse={idx % 2 !== 0}
 							/>
 						</div>
 					))
