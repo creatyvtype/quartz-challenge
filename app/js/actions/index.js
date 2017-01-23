@@ -8,3 +8,12 @@ export function getArticleIndexes(){
         })
     }
 }
+
+export function getArticle(id) {	
+	return dispatch => {
+		dispatch({
+			type: "FETCH_ARTICLE",
+			payload: API.getArticle(id)
+		})
+	}
+}

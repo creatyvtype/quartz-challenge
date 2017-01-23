@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { getArticleIndexes } from 'actions/'
+import { getArticleIndexes, getArticle } from 'actions/index'
+
+import Article from 'components/article'
 
 import 'styles/articles'
 
@@ -10,7 +12,7 @@ function mapStoreToProps(store) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getArticleIndexes }, dispatch)
+  return bindActionCreators({ getArticleIndexes, getArticle }, dispatch)
 }
 
 @connect(mapStoreToProps, mapDispatchToProps)
@@ -27,8 +29,10 @@ class ArticlesPage extends Component {
 			<div className="articles-page">
 				{
 					indexes.map(index => (
-						<div key={index}>
-							{index}
+						<div className="flex-height" key={index}>
+							<Article onVisible={this.props.getArticle.bind(null, index)} 
+								article={this.props.page.articles[index]}
+							/>
 						</div>
 					))
 				}

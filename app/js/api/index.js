@@ -11,3 +11,11 @@ export function getArticleIndexes() {
         cancelPreviousReqeust: true
     })
 }
+
+export function getArticle(id) {
+	return axios({
+		requestId: 'article',
+		method: 'get',
+		url: `/articles/${id}`
+	})
+}
