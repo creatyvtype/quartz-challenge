@@ -29,7 +29,9 @@ class Article extends Component {
 				<div className={"article " + colorStyle}>
 					<div className="title" dangerouslySetInnerHTML={this.titleHtml(article)}>
 					</div>
-					<img className="graphic" href={article.hero.url} />
+					<div className="graphic-container">
+						<img className="graphic" src={article.hero.url} />
+					</div>
 					<div className="content" dangerouslySetInnerHTML={this.contentHtml(article)}>
 					</div>
 				</div>
